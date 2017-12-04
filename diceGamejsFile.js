@@ -539,10 +539,7 @@ function shoot3(){
 function callingAllFunctions(){
 	let die = rollDie();
 	let team = firstRoll(rollDie);
-	let firstOption = shoot(firstRoll);
-	let secondOption = driveTheLane(shoot);
-	let thirdOption = shoot3(driveTheLane);
-	return thirdOption;
+	return team;
 }
 
 
