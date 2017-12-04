@@ -22,7 +22,7 @@ function firstRoll(rollDie){
 
 	  	 	}
 	  	 	else{
-	  	 		console.log("Against the New York Knicks")
+	  	 		console.log("Against the Boston Celtics")
 	  	 	}
 
 	  }
@@ -55,7 +55,7 @@ function firstRoll(rollDie){
 	  	 		console.log ("Against the Milwaukee Bucks")
 	  	 	}
 	  	 	else if (roll === 2){
-	  	 		console.log ("Against the New Orleans Pelicans")
+	  	 	    console.log ("Against the New Orleans Pelicans")
 
 	  	 	}
 	  	 	else if (roll === 3){
@@ -164,7 +164,7 @@ function firstRoll(rollDie){
 
 	  	 	}
 	  	 	else{
-	  	 		console.log("Against the Orlando Magic")
+	  	 		team = console.log("Against the Orlando Magic")
 	  	 	}
 
 
@@ -193,7 +193,7 @@ function firstRoll(rollDie){
 	  	team = console.log("You are playing in the Sleep Train Arena as the Sacramento Kings")
 	  	roll = rollDie(4)
 	     if(roll === 1){
-	  	 		console.log ("Against the Golden State Warriors")
+	  	 	 	console.log ("Against the Golden State Warriors")
 	  	 	}
 	  	 	else if (roll === 2){
 	  	 		console.log ("Against the LA Lakers")
@@ -412,5 +412,89 @@ function firstRoll(rollDie){
 	return roll;
 }
 
-let trial = firstRoll(rollDie);
-console.log(trial)
+function shoot(rollDie){
+	let roll = rollDie(10);
+	let counter = 0;
+	let score;
+		if(roll === 1){
+			score = counter; 
+			return score;
+
+			
+		}
+		else if(roll === 2){
+			score = counter; 
+			return score;
+
+			
+		}
+		else if(roll === 3){
+			score = counter; 
+			return score;
+
+			
+		}
+		else if(roll === 4){
+			score = counter; 
+			return score;
+
+			
+		}
+		else if(roll === 5){
+			score = counter; 
+			return score;
+
+			
+				
+		}
+		else {
+			score = counter + 2;
+			return score;
+		}
+
+
+}
+function driveTheLane(rollDie){
+	let roll = rollDie(8);
+	let counter = 0;
+	let score;
+		if(roll === 1 || roll === 2){
+			score = counter;
+			return score;
+		}	
+		else {
+			score = counter + 1;
+			return score;
+		}
+
+}
+function shoot3(rollDie){
+	let roll = rollDie(12);
+	let counter = 0;
+	let score;
+		if(roll === 1 || roll === 2 || roll === 3|| roll === 4){
+			score = counter + 3
+			return score;
+		}
+		else{
+			score = counter
+			return score;
+		}
+
+}
+function finalScore(){
+	let score1 = shoot(rollDie);
+	let score2 = driveTheLane(rollDie);
+	let score3 = shoot3(rollDie);
+	let finalScore = score1 + score2 + score3;
+	console.log(finalScore)
+	return finalScore;
+
+}
+
+
+
+
+
+
+let trial = finalScore();
