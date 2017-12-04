@@ -1,9 +1,12 @@
 "use strict";
+let playerScore = 0;
+let playerTwoScore = 0;
+
 function rollDie(numberOfSides){
 	return Math.floor(Math.random()*(numberOfSides) + 1);
 }
 
-function firstRoll(rollDie){
+function firstRoll(){
 	let roll; 
 	roll = rollDie(20);
 	let team;
@@ -412,89 +415,167 @@ function firstRoll(rollDie){
 	return roll;
 }
 
-function shoot(rollDie){
+
+function shoot(){
+	//console.clear();
 	let roll = rollDie(10);
 	let counter = 0;
 	let score;
 		if(roll === 1){
 			score = counter; 
-			return score;
+			playerScore = playerScore + score;
+			console.log("This play you missed. Total Score: "+ playerScore);
+			return playerScore;
 
 			
 		}
 		else if(roll === 2){
-			score = counter; 
-			return score;
+			score = counter;
+			playerScore = playerScore + score;
+			console.log("This play you missed. Total Score: "+ playerScore);
+			return playerScore;
 
 			
 		}
 		else if(roll === 3){
-			score = counter; 
-			return score;
+			score = counter;
+			playerScore = playerScore + score; 
+			console.log("This play you missed. Total Score: "+ playerScore);
+			return playerScore;
 
 			
 		}
 		else if(roll === 4){
 			score = counter; 
-			return score;
+			playerScore = playerScore + score;
+			console.log("This play you missed. Total Score: "+ playerScore);
+			return playerScore;
 
 			
 		}
 		else if(roll === 5){
 			score = counter; 
-			return score;
+			playerScore = playerScore + score;
+			console.log("This play you missed. Total Score: "+ playerScore);
+			return playerScore;
 
 			
 				
 		}
 		else {
 			score = counter + 2;
-			return score;
+			playerScore = playerScore + score;
+			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore);
+			return playerScore;
 		}
 
 
 }
-function driveTheLane(rollDie){
+
+
+function driveTheLane(){
+	//console.clear();
 	let roll = rollDie(8);
 	let counter = 0;
 	let score;
 		if(roll === 1 || roll === 2){
-			score = counter;
-			return score;
+			rollDie(6);
+				if(roll === 1){
+				score = counter + 1;
+				playerScore = playerScore + score;
+				console.log("This play you missed, got fouled, and made the free throw " + score + " Total Score: "+ playerScore);
+				return playerScore;
+			}
+				else if (roll === 2 || roll === 3){
+					score = counter;
+					playerScore = playerScore + score;
+					console.log("This play you missed. Total Score: " + playerScore)
+				}
+		}
+		else if(roll === 3) { 
+			rollDie(6);
+				if(roll === 1 || roll === 2 || roll === 3 || roll === 4){
+					score = counter + 2;
+					playerScore = playerScore + score;
+				    console.log("This play you made it, got fouled, and made the free throw: " + score + " "+ "Total Score: " + playerScore);
+				    return playerScore;
+				}
+				else {
+					score = counter + 1;
+					playerScore = playerScore + score;
+					console.log("This play you made it, got fouled and missed the free throw: " + score + " " + "Total Score: " + playerScore);
+					return playerScore;
+				}
+
+
 		}	
 		else {
 			score = counter + 1;
-			return score;
+			playerScore = playerScore + score;
+			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore);
+			return playerScore;
 		}
 
 }
-function shoot3(rollDie){
+function shoot3(){
+	//console.clear();
 	let roll = rollDie(12);
 	let counter = 0;
 	let score;
 		if(roll === 1 || roll === 2 || roll === 3|| roll === 4){
-			score = counter + 3
-			return score;
+			score = counter + 3;
+			playerScore = playerScore + score;
+			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore);
+			return playerScore;
 		}
 		else{
-			score = counter
-			return score;
+			score = counter;
+			playerScore = playerScore + score;
+			console.log("This play you missed. Total Score:" + playerScore);
+			return playerScore;
 		}
 
 }
-function finalScore(){
-	let score1 = shoot(rollDie);
-	let score2 = driveTheLane(rollDie);
-	let score3 = shoot3(rollDie);
-	let finalScore = score1 + score2 + score3;
-	console.log(finalScore)
-	return finalScore;
+function callingAllFunctions(){
+	let die = rollDie();
+	let team = firstRoll(rollDie);
+	let firstOption = shoot(firstRoll);
+	let secondOption = driveTheLane(shoot);
+	let thirdOption = shoot3(driveTheLane);
+	return thirdOption;
+}
 
+
+function numberOfPlayers(){
+	let numPlayers = prompt("Please enter the number of players.");
+	switch(numPlayers){
+		case "1":
+		 callingAllFunctions();
+		 break;
+
+		case "2":
+		 callingAllFunctions();
+		break;
+
+		default:
+		"Please enter in 1 or 2";
+	}
 }
 
 
 
 
 
+// function finalScore(){
+// 	let score1 = shoot(rollDie);
+// 	let score2 = driveTheLane(rollDie);
+// 	let score3 = shoot3(rollDie);
+// 	let finalS = score1 + score2 + score3;
+// 	console.log(finalS);
+// 	return finalS;
+// }
 
-let trial = finalScore();
+
+
+
+let trial = firstRoll();
