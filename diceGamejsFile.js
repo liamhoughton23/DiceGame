@@ -1,7 +1,7 @@
 "use strict";
 let playerScore = 0;
 let playerTwoScore = 0;
-let comptuerScore = 0;
+let computerScore = 0;
 let numberofClicks = 0;
 let numberofClicks2 = 0;
 let numberofClicksforComputer = 0;
@@ -542,6 +542,9 @@ function shoot3(){
 		}
 
 }
+
+
+
 function shoot2(){
 	//console.clear();
 	let roll = rollDie(10);
@@ -666,6 +669,128 @@ function shoot32(){
 
 }
 
+function shootComputer(){
+	//console.clear();
+	let roll = rollDie(10);
+	let counter = 0;
+	numberofClicksforComputer = numberofClicksforComputer + 1;
+	let score;
+		if(roll === 1){
+			score = counter; 
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you missed. Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+
+			
+		}
+		else if(roll === 2){
+			score = counter;
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you missed. Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+
+			
+		}
+		else if(roll === 3){
+			score = counter;
+			computerScore = computerScore + score; 
+			console.log("COMPUTER This play you missed. Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+
+			
+		}
+		else if(roll === 4){
+			score = counter; 
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you missed. Total Score: "+ computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+
+			
+		}
+		else if(roll === 5){
+			score = counter; 
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you missed. Total Score: "+ computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+
+			
+				
+		}
+		else {
+			score = counter + 2;
+			playerScore = playerScore + score;
+			console.log("COMPUTER This play you scored: " + score +" "+ "Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return playerScore;
+		}
+
+
+}
+
+
+function driveTheLaneComputer(){
+	//console.clear();
+	let roll = rollDie(8);
+	let counter = 0;
+	numberofClicksforComputer = numberofClicksforComputer + 1
+	let score;
+		if(roll === 1 || roll === 2){
+			rollDie(6);
+				if(roll === 1){
+				score = counter + 1;
+				computerScore = computerScore + score;
+				console.log("COMPUTER This play you missed, got fouled, and made the free throw " + score + " Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+				return computerScore;
+			}
+				else if (roll === 2 || roll === 3){
+					score = counter;
+					computerScore = computerScore + score;
+					console.log("COMPUTER This play you missed. Total Score: " + computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer)
+				}
+		}
+		else if(roll === 3) { 
+			rollDie(6);
+				if(roll === 1 || roll === 2 || roll === 3 || roll === 4){
+					score = counter + 2;
+					computerScore = computerScore + score;
+				    console.log("COMPUTER This play you made it, got fouled, and made the free throw: " + score + " "+ "Total Score: " + computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+				    return playerScore;
+				}
+				else {
+					score = counter + 1;
+					computerScore = computerScore + score;
+					console.log("COMPUTER This play you made it, got fouled and missed the free throw: " + score + " " + "Total Score: " + computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+					return computerScore				}
+
+
+		}	
+		else {
+			score = counter + 1;
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you scored: " + score +" "+ "Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+		}
+
+}
+function shoot3Computer(){
+	//console.clear();
+	let roll = rollDie(12);
+	let counter = 0;
+	numberofClicksforComputer = numberofClicksforComputer + 1
+	let score;
+		if(roll === 1 || roll === 2 || roll === 3|| roll === 4){
+			score = counter + 3;
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you scored: " + score +" "+ "Total Score: "+ computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return playerScore;
+		}
+		else{
+			score = counter;
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you missed. Total Score:" + computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
+		}
+
+}
 
 
 
@@ -766,20 +891,59 @@ function shoot3Limit2(){
 
 
 function computerPlayer(){
-	let notice = alert("Computers Turn");
-	let score;
-    let roll = rollDie(3);
-    if(roll === 1){
- 		let shootFunction = shootLimit();
- 		 
- 		console.log("COMPUTER scored: " + score + " " + "Their total score is: " + computerScore)   	
+    let roll = rollDie(10);
+    if(roll === 1 || roll === 2 || roll === 3){
+ 		let shootFunction = shootLimitComputer();  	
     }
-    else if(roll === 2){
-    	let driveFunction = driveTheLaneLimit();
+    else if(roll === 4 || roll === 5 || roll === 6 || roll === 7){
+    	let driveFunction = driveTheLaneLimitComputer();
     }
     else{
-    	let shoot3Function = shoot3Limit();
+    	let shoot3Function = shoot3LimitComputer();
     }
+
+  }
+
+
+function shootLimitComputer(){
+       if(numberofClicksforComputer > 30){
+       	console.log("Game is over. Your Score is: " + computerScore);
+       }
+       else{
+       	shootComputer();
+       	//switchingPlayers();
+       	// numberofClicks = numberofClicks + 1;
+       	// return numberofClicks;
+
+       }
+    //alert("Player 2 Turn");
+
+
+}
+
+function driveTheLaneLimitComputer(){
+       if(numberofClicksforComputer > 30){
+       	console.log("Game is over. The computer score is: " + computerScore);
+       }
+       else{
+       	driveTheLaneComputer();
+       	//switchingPlayers();
+       }
+    //alert("Player 2 Turn");
+
+}
+
+function shoot3LimitComputer(){
+       if(numberofClicksforComputer > 30){
+       	console.log("The computer score is : " + computerScore);
+       }
+       else{
+       	shoot3Computer();
+       	//switchingPlayers();
+       	// numberofClicks = numberofClicks + 1;
+       	// return numberofClicks;
+       }
+    //alert("Player 2 Turn");
 	
 }
 
