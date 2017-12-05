@@ -1,8 +1,10 @@
 "use strict";
 let playerScore = 0;
 let playerTwoScore = 0;
+let comptuerScore = 0;
 let numberofClicks = 0;
-
+let numberofClicks2 = 0;
+let numberofClicksforComputer = 0;
 function rollDie(numberOfSides){
 	return Math.floor(Math.random()*(numberOfSides) + 1);
 }
@@ -426,7 +428,7 @@ function shoot(){
 		if(roll === 1){
 			score = counter; 
 			playerScore = playerScore + score;
-			console.log("This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 
 			
@@ -434,7 +436,7 @@ function shoot(){
 		else if(roll === 2){
 			score = counter;
 			playerScore = playerScore + score;
-			console.log("This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 
 			
@@ -442,7 +444,7 @@ function shoot(){
 		else if(roll === 3){
 			score = counter;
 			playerScore = playerScore + score; 
-			console.log("This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 
 			
@@ -450,7 +452,7 @@ function shoot(){
 		else if(roll === 4){
 			score = counter; 
 			playerScore = playerScore + score;
-			console.log("This play you missed. Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 
 			
@@ -458,7 +460,7 @@ function shoot(){
 		else if(roll === 5){
 			score = counter; 
 			playerScore = playerScore + score;
-			console.log("This play you missed. Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 
 			
@@ -467,7 +469,7 @@ function shoot(){
 		else {
 			score = counter + 2;
 			playerScore = playerScore + score;
-			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you scored: " + score +" "+ "Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 		}
 
@@ -486,13 +488,13 @@ function driveTheLane(){
 				if(roll === 1){
 				score = counter + 1;
 				playerScore = playerScore + score;
-				console.log("This play you missed, got fouled, and made the free throw " + score + " Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+				console.log("PLAYER 1 This play you missed, got fouled, and made the free throw " + score + " Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 				return playerScore;
 			}
 				else if (roll === 2 || roll === 3){
 					score = counter;
 					playerScore = playerScore + score;
-					console.log("This play you missed. Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks)
+					console.log("PLAYER 1 This play you missed. Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks)
 				}
 		}
 		else if(roll === 3) { 
@@ -500,13 +502,13 @@ function driveTheLane(){
 				if(roll === 1 || roll === 2 || roll === 3 || roll === 4){
 					score = counter + 2;
 					playerScore = playerScore + score;
-				    console.log("This play you made it, got fouled, and made the free throw: " + score + " "+ "Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks);
+				    console.log("PLAYER 1 This play you made it, got fouled, and made the free throw: " + score + " "+ "Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks);
 				    return playerScore;
 				}
 				else {
 					score = counter + 1;
 					playerScore = playerScore + score;
-					console.log("This play you made it, got fouled and missed the free throw: " + score + " " + "Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks);
+					console.log("PLAYER 1 This play you made it, got fouled and missed the free throw: " + score + " " + "Total Score: " + playerScore+ ' ' + "Number of clicks: " + numberofClicks);
 					return playerScore;
 				}
 
@@ -515,7 +517,7 @@ function driveTheLane(){
 		else {
 			score = counter + 1;
 			playerScore = playerScore + score;
-			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you scored: " + score +" "+ "Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 		}
 
@@ -529,17 +531,146 @@ function shoot3(){
 		if(roll === 1 || roll === 2 || roll === 3|| roll === 4){
 			score = counter + 3;
 			playerScore = playerScore + score;
-			console.log("This play you scored: " + score +" "+ "Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you scored: " + score +" "+ "Total Score: "+ playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 		}
 		else{
 			score = counter;
 			playerScore = playerScore + score;
-			console.log("This play you missed. Total Score:" + playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score:" + playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 		}
 
 }
+function shoot2(){
+	//console.clear();
+	let roll = rollDie(10);
+	let counter = 0;
+	numberofClicks2 = numberofClicks2 + 1;
+	let score;
+		if(roll === 1){
+			score = counter; 
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you missed. Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerScore;
+
+			
+		}
+		else if(roll === 2){
+			score = counter;
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you missed. Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+
+			
+		}
+		else if(roll === 3){
+			score = counter;
+			playerTwoScore = playerTwoScore + score; 
+			console.log("PLAYER 2 This play you missed. Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+
+			
+		}
+		else if(roll === 4){
+			score = counter; 
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you missed. Total Score: "+ playerTwoScore+ ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+
+			
+		}
+		else if(roll === 5){
+			score = counter; 
+			playerScore = playerScore + score;
+			console.log("PLAYER 2 This play you missed. Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicks2);
+			return playerScore;
+
+			
+				
+		}
+		else {
+			score = counter + 2;
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you scored: " + score +" "+ "Total Score: "+ playerTwoScore+ ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+		}
+
+
+}
+
+
+function driveTheLane2(){
+	//console.clear();
+	let roll = rollDie(8);
+	let counter = 0;
+	numberofClicks2 = numberofClicks2 + 1
+	let score;
+		if(roll === 1 || roll === 2){
+			rollDie(6);
+				if(roll === 1){
+				score = counter + 1;
+				playerTwoScore = playerTwoScore + score;
+				console.log("PLAYER 2 This play you missed, got fouled, and made the free throw " + score + " Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+				return playerTwoScore;
+			}
+				else if (roll === 2 || roll === 3){
+					score = counter;
+					playerTwoScore = playerTwoScore + score;
+					console.log("PLAYER 2 This play you missed. Total Score: " + playerTwoScore+ ' ' + "Number of clicks: " + numberofClicks2)
+				}
+		}
+		else if(roll === 3) { 
+			rollDie(6);
+				if(roll === 1 || roll === 2 || roll === 3 || roll === 4){
+					score = counter + 2;
+					playerTwoScore = playerTwoScore + score;
+				    console.log("PLAYER 2 This play you made it, got fouled, and made the free throw: " + score + " "+ "Total Score: " + playerTwoScore+ ' ' + "Number of clicks: " + numberofClicks2);
+				    return playerTwoScore;
+				}
+				else {
+					score = counter + 1;
+					playerTwoScore = playerTwoScore + score;
+					console.log("PLAYER 2 This play you made it, got fouled and missed the free throw: " + score + " " + "Total Score: " + playerTwoScore+ ' ' + "Number of clicks: " + numberofClicks2);
+					return playerTwoScore;
+				}
+
+
+		}	
+		else {
+			score = counter + 1;
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you scored: " + score +" "+ "Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+		}
+
+}
+function shoot32(){
+	//console.clear();
+	let roll = rollDie(12);
+	let counter = 0;
+	numberofClicks2 = numberofClicks2 + 1
+	let score;
+		if(roll === 1 || roll === 2 || roll === 3|| roll === 4){
+			score = counter + 3;
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you scored: " + score +" "+ "Total Score: "+ playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+		}
+		else{
+			score = counter;
+			playerTwoScore = playerTwoScore + score;
+			console.log("PLAYER 2 This play you missed. Total Score:" + playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			return playerTwoScore;
+		}
+
+}
+
+
+
+
+
+
 function callingAllFunctions(){
 	let die = rollDie();
 	let team = firstRoll(rollDie);
@@ -548,55 +679,100 @@ function callingAllFunctions(){
 
 function shootLimit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Player With higher score wins");
+       	console.log("Game is over. Your Score is: " + playerScore);
        }
        else{
        	shoot();
-       	switchingPlayers();
+       	//switchingPlayers();
        	// numberofClicks = numberofClicks + 1;
        	// return numberofClicks;
 
        }
+    //alert("Player 2 Turn");
 
 
 }
 
 function driveTheLaneLimit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Player With higher score wins");
+       	console.log("Game is over. Your Score is: " + playerScore);
        }
        else{
        	driveTheLane();
-       	switchingPlayers();
+       	//switchingPlayers();
        }
+    //alert("Player 2 Turn");
 
 }
 
 
 function shoot3Limit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Player With higher score wins");
+       	console.log("Game is over. Your Score is: " + playerScore);
        }
        else{
        	shoot3();
-       	switchingPlayers();
+       	//switchingPlayers();
        	// numberofClicks = numberofClicks + 1;
        	// return numberofClicks;
        }
+    //alert("Player 2 Turn");
 	
 
 }
 
-function playerTwo(){
-	let notice = alert("Player two's turn")
-	
+function shootLimit2(){
+       if(numberofClicks2 > 30){
+       	console.log("Game is over. Your score is: " + playerTwoScore);
+       }
+       else{
+       	shoot2();
+       	//switchingPlayers();
+       	// numberofClicks = numberofClicks + 1;
+       	// return numberofClicks;
+
+       }
+      //alert("Player 1 Turn");
+
 }
+
+function driveTheLaneLimit2(){
+       if(numberofClicks2 > 30){
+       	console.log("Game is over. Player With higher score wins: " + playerTwoScore);
+       }
+       else{
+       	driveTheLane2();
+       	//switchingPlayers();
+       }
+      //alert("Player 1 Turn");
+}
+
+
+function shoot3Limit2(){
+
+       if(numberofClicks > 30){
+       	console.log("Game is over. Player With higher score wins: " + playerTwoScore);
+       }
+       else{
+       	shoot32();
+       	//switchingPlayers();
+       	// numberofClicks = numberofClicks + 1;
+       	// return numberofClicks;
+       }
+	//alert("Player 1 Turn");
+
+}
+
+
 
 function computerPlayer(){
 	let notice = alert("Computers Turn");
-    let roll = rollDie(3)
+	let score;
+    let roll = rollDie(3);
     if(roll === 1){
- 		let shootFunction = shootLimit();   	
+ 		let shootFunction = shootLimit();
+ 		 
+ 		console.log("COMPUTER scored: " + score + " " + "Their total score is: " + computerScore)   	
     }
     else if(roll === 2){
     	let driveFunction = driveTheLaneLimit();
