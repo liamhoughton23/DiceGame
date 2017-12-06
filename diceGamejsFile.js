@@ -419,8 +419,7 @@ function firstRoll(){
 }
 
 
-function shoot(){
-	//console.clear();
+function shoot(){  
 	let roll = rollDie(10);
 	let counter = 0;
 	numberofClicks = numberofClicks + 1;
@@ -478,7 +477,6 @@ function shoot(){
 
 
 function driveTheLane(){
-	//console.clear();
 	let roll = rollDie(8);
 	let counter = 0;
 	numberofClicks = numberofClicks + 1
@@ -523,7 +521,6 @@ function driveTheLane(){
 
 }
 function shoot3(){
-	//console.clear();
 	let roll = rollDie(12);
 	let counter = 0;
 	numberofClicks = numberofClicks + 1
@@ -537,7 +534,7 @@ function shoot3(){
 		else{
 			score = counter;
 			playerScore = playerScore + score;
-			console.log("PLAYER 1 This play you missed. Total Score:" + playerScore + ' ' + "Number of clicks: " + numberofClicks);
+			console.log("PLAYER 1 This play you missed. Total Score: " + playerScore + ' ' + "Number of clicks: " + numberofClicks);
 			return playerScore;
 		}
 
@@ -546,7 +543,6 @@ function shoot3(){
 
 
 function shoot2(){
-	//console.clear();
 	let roll = rollDie(10);
 	let counter = 0;
 	numberofClicks2 = numberofClicks2 + 1;
@@ -604,7 +600,6 @@ function shoot2(){
 
 
 function driveTheLane2(){
-	//console.clear();
 	let roll = rollDie(8);
 	let counter = 0;
 	numberofClicks2 = numberofClicks2 + 1
@@ -649,7 +644,6 @@ function driveTheLane2(){
 
 }
 function shoot32(){
-	//console.clear();
 	let roll = rollDie(12);
 	let counter = 0;
 	numberofClicks2 = numberofClicks2 + 1
@@ -663,14 +657,13 @@ function shoot32(){
 		else{
 			score = counter;
 			playerTwoScore = playerTwoScore + score;
-			console.log("PLAYER 2 This play you missed. Total Score:" + playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
+			console.log("PLAYER 2 This play you missed. Total Score: " + playerTwoScore + ' ' + "Number of clicks: " + numberofClicks2);
 			return playerTwoScore;
 		}
 
 }
 
 function shootComputer(){
-	//console.clear();
 	let roll = rollDie(10);
 	let counter = 0;
 	numberofClicksforComputer = numberofClicksforComputer + 1;
@@ -728,7 +721,6 @@ function shootComputer(){
 
 
 function driveTheLaneComputer(){
-	//console.clear();
 	let roll = rollDie(8);
 	let counter = 0;
 	numberofClicksforComputer = numberofClicksforComputer + 1
@@ -772,7 +764,6 @@ function driveTheLaneComputer(){
 
 }
 function shoot3Computer(){
-	//console.clear();
 	let roll = rollDie(12);
 	let counter = 0;
 	numberofClicksforComputer = numberofClicksforComputer + 1
@@ -786,12 +777,11 @@ function shoot3Computer(){
 		else{
 			score = counter;
 			computerScore = computerScore + score;
-			console.log("COMPUTER This play you missed. Total Score:" + computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
+			console.log("COMPUTER This play you missed. Total Score: " + computerScore + ' ' + "Number of clicks: " + numberofClicksforComputer);
 			return computerScore;
 		}
 
 }
-
 
 
 
@@ -804,87 +794,77 @@ function callingAllFunctions(){
 
 function shootLimit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Your Score is: " + playerScore);
+       	console.log("PLAYER 1 is done. Your Score is: " + playerScore);
        }
        else{
        	shoot();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
 
        }
-    //alert("Player 2 Turn");
+    
 
 
 }
 
 function driveTheLaneLimit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Your Score is: " + playerScore);
+       	console.log("PLAYER 1 is done. Your Score is: " + playerScore);
        }
        else{
        	driveTheLane();
-       	//switchingPlayers();
+       	
        }
-    //alert("Player 2 Turn");
+   
 
 }
 
 
 function shoot3Limit(){
        if(numberofClicks > 30){
-       	console.log("Game is over. Your Score is: " + playerScore);
+       	console.log("PLAYER 1 is done. Your Score is: " + playerScore);
        }
        else{
        	shoot3();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
+
        }
-    //alert("Player 2 Turn");
-	
+    	
 
 }
 
 function shootLimit2(){
        if(numberofClicks2 > 30){
-       	console.log("Game is over. Your score is: " + playerTwoScore);
+       	console.log("PLAYER 2 is done. Score: " + playerTwoScore);
        }
        else{
        	shoot2();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
+       	
 
        }
-      //alert("Player 1 Turn");
+      
 
 }
 
 function driveTheLaneLimit2(){
        if(numberofClicks2 > 30){
-       	console.log("Game is over. Player With higher score wins: " + playerTwoScore);
+       	console.log("PLAYER 2 is done, Score: " + playerTwoScore);
        }
        else{
        	driveTheLane2();
-       	//switchingPlayers();
-       }
-      //alert("Player 1 Turn");
+       	
+       	}
+      
 }
 
 
 function shoot3Limit2(){
 
        if(numberofClicks > 30){
-       	console.log("Game is over. Player With higher score wins: " + playerTwoScore);
+       	console.log("PLAYER 2 is done. Score: " + playerTwoScore);
        }
        else{
        	shoot32();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
+       	
        }
-	//alert("Player 1 Turn");
+	
 
 }
 
@@ -907,43 +887,33 @@ function computerPlayer(){
 
 function shootLimitComputer(){
        if(numberofClicksforComputer > 30){
-       	console.log("Game is over. Your Score is: " + computerScore);
+       	console.log("COMPUTER is done. Score: " + computerScore);
        }
        else{
        	shootComputer();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
-
        }
-    //alert("Player 2 Turn");
 
 
 }
 
 function driveTheLaneLimitComputer(){
        if(numberofClicksforComputer > 30){
-       	console.log("Game is over. The computer score is: " + computerScore);
+       	console.log("COMPUTER is done. Score: " + computerScore);
        }
        else{
        	driveTheLaneComputer();
-       	//switchingPlayers();
        }
-    //alert("Player 2 Turn");
+   
 
 }
 
 function shoot3LimitComputer(){
        if(numberofClicksforComputer > 30){
-       	console.log("The computer score is : " + computerScore);
+       	console.log("COMPUTER is done. Score: " + computerScore);
        }
        else{
        	shoot3Computer();
-       	//switchingPlayers();
-       	// numberofClicks = numberofClicks + 1;
-       	// return numberofClicks;
        }
-    //alert("Player 2 Turn");
 	
 }
 
@@ -967,38 +937,7 @@ function numberOfPlayers(){
 }
 
 
-// function computerPlayer(){
-// 	let randomize = rollDie(3);
-// 	// let shootFunction = shoot();
-// 	// let driveFunction = driveTheLane();
-// 	// let shoot3Function = shoot3();
-// 		if(randomize === 1){
-// 			shootFunction;
-// 		}
-// 		else if(randomize === 2){
-// 			driveFunction;
-// 		}
-// 		else{
-// 			shoot3Function;
-// 		}
-// }
 
-
- 
-
-
-
-
-
-
-// function finalScore(){
-// 	let score1 = shoot(rollDie);
-// 	let score2 = driveTheLane(rollDie);
-// 	let score3 = shoot3(rollDie);
-// 	let finalS = score1 + score2 + score3;
-// 	console.log(finalS);
-// 	return finalS;
-// }
 
 
 
