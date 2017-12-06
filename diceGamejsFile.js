@@ -718,9 +718,9 @@ function shootComputer(){
 		}
 		else {
 			score = counter + 2;
-			playerScore = playerScore + score;
-			console.log("COMPUTER This play you scored: " + score +" "+ "Total Score: "+ playerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
-			return playerScore;
+			computerScore = computerScore + score;
+			console.log("COMPUTER This play you scored: " + score +" "+ "Total Score: "+ computerScore+ ' ' + "Number of clicks: " + numberofClicksforComputer);
+			return computerScore;
 		}
 
 
